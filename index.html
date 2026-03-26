@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,361 +10,529 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --ink: #1a1a2e;
-    --cream: #f5f0e8;
-    --gold: #c9a84c;
-    --gold-light: #e8d5a3;
-    --rose: #b5656b;
-    --card: #ffffff;
-    --muted: #7a7a8c;
-  }
+:root {
+–ink: #1a1a2e;
+–cream: #f5f0e8;
+–gold: #c9a84c;
+–gold-light: #e8d5a3;
+–rose: #b5656b;
+–green: #4a7c59;
+–card: #ffffff;
+–muted: #7a7a8c;
+}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    min-height: 100vh;
-    padding: 0;
-  }
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–cream);
+color: var(–ink);
+min-height: 100vh;
+padding: 0;
+}
 
-  /* Decorative top banner */
-  .banner {
-    background: var(--ink);
-    padding: 14px 24px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 10px,
-      rgba(201,168,76,0.07) 10px,
-      rgba(201,168,76,0.07) 20px
-    );
-  }
-  .banner p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    position: relative;
-  }
+.banner {
+background: var(–ink);
+padding: 14px 24px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.banner::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(201,168,76,0.07) 10px, rgba(201,168,76,0.07) 20px);
+}
+.banner p {
+font-size: 12px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–gold-light);
+position: relative;
+}
 
-  .hero {
-    background: var(--ink);
-    padding: 48px 24px 56px;
-    text-align: center;
-    position: relative;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0; right: 0;
-    height: 40px;
-    background: var(--cream);
-    clip-path: ellipse(55% 100% at 50% 100%);
-  }
+.hero {
+background: var(–ink);
+padding: 48px 24px 56px;
+text-align: center;
+position: relative;
+}
+.hero::after {
+content: ‘’;
+position: absolute;
+bottom: -1px;
+left: 0; right: 0;
+height: 40px;
+background: var(–cream);
+clip-path: ellipse(55% 100% at 50% 100%);
+}
 
-  .badge {
-    display: inline-block;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 2px;
-    margin-bottom: 20px;
-  }
+.badge {
+display: inline-block;
+border: 1px solid var(–gold);
+color: var(–gold);
+font-size: 10px;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+padding: 5px 14px;
+border-radius: 2px;
+margin-bottom: 20px;
+}
 
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 8vw, 3.4rem);
-    font-weight: 900;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
-  .hero h1 span {
-    color: var(--gold);
-  }
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2.2rem, 8vw, 3.4rem);
+font-weight: 900;
+color: #fff;
+line-height: 1.1;
+margin-bottom: 12px;
+}
+.hero h1 span { color: var(–gold); }
 
-  .hero p {
-    color: rgba(255,255,255,0.6);
-    font-size: 15px;
-    max-width: 320px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
+.hero p {
+color: rgba(255,255,255,0.6);
+font-size: 15px;
+max-width: 320px;
+margin: 0 auto;
+line-height: 1.6;
+}
 
-  /* Main card */
-  .container {
-    max-width: 520px;
-    margin: 0 auto;
-    padding: 32px 20px 60px;
-  }
+.container {
+max-width: 520px;
+margin: 0 auto;
+padding: 32px 20px 60px;
+}
 
-  .card {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 32px 28px;
-    box-shadow: 0 4px 40px rgba(26,26,46,0.10);
-    margin-bottom: 20px;
-  }
+.card {
+background: var(–card);
+border-radius: 16px;
+padding: 32px 28px;
+box-shadow: 0 4px 40px rgba(26,26,46,0.10);
+margin-bottom: 20px;
+}
 
-  .section-label {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--gold-light);
-  }
+/* ── Path chooser ── */
+.path-title {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.25rem;
+font-weight: 700;
+text-align: center;
+margin-bottom: 6px;
+}
+.path-subtitle {
+text-align: center;
+font-size: 13px;
+color: var(–muted);
+margin-bottom: 24px;
+}
+.path-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 14px;
+}
+.path-btn {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 28px 16px;
+border: 2px solid #e4e0d8;
+border-radius: 14px;
+background: #faf9f6;
+cursor: pointer;
+transition: all 0.2s;
+text-align: center;
+}
+.path-btn:hover {
+border-color: var(–gold);
+background: #fff8ec;
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(201,168,76,0.15);
+}
+.path-btn .path-icon { font-size: 32px; }
+.path-btn .path-label {
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+font-weight: 700;
+color: var(–ink);
+}
+.path-btn .path-desc {
+font-size: 12px;
+color: var(–muted);
+line-height: 1.4;
+}
+.path-btn.book { border-color: rgba(26,26,46,0.2); }
+.path-btn.pay  { border-color: rgba(201,168,76,0.4); }
 
-  .field {
-    margin-bottom: 16px;
-  }
-  label {
-    display: block;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 6px;
-  }
-  input, textarea, select {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1.5px solid #e4e0d8;
-    border-radius: 8px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    color: var(--ink);
-    background: #faf9f6;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-    -webkit-appearance: none;
-  }
-  input:focus, textarea:focus, select:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
-    background: #fff;
-  }
-  textarea { resize: vertical; min-height: 80px; }
+/* ── Step indicator ── */
+.step-indicator {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0;
+margin-bottom: 24px;
+}
+.step-dot {
+width: 32px; height: 32px;
+border-radius: 50%;
+background: #e4e0d8;
+color: var(–muted);
+font-size: 13px;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.3s;
+flex-shrink: 0;
+}
+.step-dot.active { background: var(–ink); color: #fff; }
+.step-dot.done   { background: var(–gold); color: var(–ink); }
+.step-line {
+flex: 1; max-width: 60px; height: 2px;
+background: #e4e0d8;
+transition: background 0.3s;
+}
+.step-line.done { background: var(–gold); }
+.step-labels {
+display: flex;
+justify-content: space-between;
+margin-bottom: 28px;
+padding: 0 4px;
+}
+.step-label {
+font-size: 11px;
+color: var(–muted);
+letter-spacing: 0.05em;
+text-transform: uppercase;
+font-weight: 500;
+text-align: center;
+flex: 1;
+}
+.step-label.active { color: var(–ink); }
 
-  /* Payment options */
-  .payment-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-  .pay-option {
-    position: relative;
-  }
-  .pay-option input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    width: 0; height: 0;
-  }
-  .pay-option label {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 11px 14px;
-    border: 1.5px solid #e4e0d8;
-    border-radius: 8px;
-    cursor: pointer;
-    background: #faf9f6;
-    transition: all 0.18s;
-    text-transform: none;
-    letter-spacing: 0;
-    font-size: 14px;
-    color: var(--ink);
-    font-weight: 400;
-  }
-  .pay-option input:checked + label {
-    border-color: var(--gold);
-    background: #fff8ec;
-    color: #8a6a1a;
-    font-weight: 500;
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
-  }
-  .pay-icon { font-size: 18px; }
+/* ── Section label ── */
+.section-label {
+font-size: 10px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–gold);
+font-weight: 500;
+margin-bottom: 18px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.section-label::after {
+content: ‘’; flex: 1; height: 1px;
+background: var(–gold-light);
+}
 
-  /* Tip section */
-  .tip-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-  }
-  .tip-btn {
-    flex: 1;
-    min-width: 56px;
-    padding: 9px 6px;
-    border: 1.5px solid #e4e0d8;
-    border-radius: 8px;
-    background: #faf9f6;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.18s;
-    text-align: center;
-  }
-  .tip-btn:hover { border-color: var(--gold); color: var(--ink); }
-  .tip-btn.active {
-    border-color: var(--gold);
-    background: #fff8ec;
-    color: #8a6a1a;
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
-  }
-  .tip-custom {
-    display: none;
-    margin-top: 8px;
-  }
-  .tip-custom.show { display: block; }
+.field { margin-bottom: 16px; }
 
-  /* Ride type */
-  .ride-chips {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .chip {
-    position: relative;
-  }
-  .chip input[type="checkbox"] {
-    position: absolute; opacity: 0; width:0; height:0;
-  }
-  .chip label {
-    display: inline-block;
-    padding: 8px 14px;
-    border: 1.5px solid #e4e0d8;
-    border-radius: 20px;
-    cursor: pointer;
-    background: #faf9f6;
-    font-size: 13px;
-    color: var(--muted);
-    text-transform: none;
-    letter-spacing: 0;
-    font-weight: 400;
-    transition: all 0.18s;
-  }
-  .chip input:checked + label {
-    border-color: var(--ink);
-    background: var(--ink);
-    color: #fff;
-  }
+label {
+display: block;
+font-size: 12px;
+font-weight: 500;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+color: var(–muted);
+margin-bottom: 6px;
+}
 
-  /* Submit */
-  .submit-btn {
-    width: 100%;
-    padding: 16px;
-    background: var(--ink);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    margin-top: 8px;
-    position: relative;
-    overflow: hidden;
-  }
-  .submit-btn::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, transparent 40%, rgba(201,168,76,0.25));
-  }
-  .submit-btn:hover { background: #2d2d4e; transform: translateY(-1px); }
-  .submit-btn:active { transform: translateY(0); }
+input, textarea {
+width: 100%;
+padding: 12px 16px;
+border: 1.5px solid #e4e0d8;
+border-radius: 8px;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 15px;
+color: var(–ink);
+background: #faf9f6;
+transition: border-color 0.2s, box-shadow 0.2s;
+outline: none;
+-webkit-appearance: none;
+}
+input:focus, textarea:focus {
+border-color: var(–gold);
+box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+background: #fff;
+}
+textarea { resize: vertical; min-height: 80px; }
 
-  /* Success state */
-  .success-card {
-    display: none;
-    text-align: center;
-    padding: 40px 28px;
-  }
-  .success-card.show { display: block; }
-  .success-icon { font-size: 52px; margin-bottom: 16px; }
-  .success-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  .success-card p { color: var(--muted); font-size: 15px; line-height: 1.6; }
+.datetime-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+margin-bottom: 12px;
+}
 
-  /* QR section */
-  .qr-card {
-    text-align: center;
-    padding: 32px 28px;
-  }
-  .qr-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-  }
-  .qr-card p { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
-  #qrcode {
-    display: inline-block;
-    padding: 14px;
-    background: white;
-    border: 2px solid var(--gold-light);
-    border-radius: 12px;
-    margin-bottom: 14px;
-  }
-  .qr-url {
-    font-size: 11px;
-    color: var(--muted);
-    word-break: break-all;
-    background: #faf9f6;
-    padding: 8px 12px;
-    border-radius: 6px;
-    margin-bottom: 12px;
-  }
-  .qr-hint {
-    font-size: 11px;
-    color: var(--muted);
-    font-style: italic;
-  }
+.warning-box {
+display: none;
+background: #fff3cd;
+border: 1px solid #f0c040;
+border-radius: 8px;
+padding: 12px 14px;
+font-size: 13px;
+color: #7a5c00;
+margin-bottom: 12px;
+line-height: 1.5;
+}
+.warning-box.show { display: block; }
 
-  /* Footer note */
-  .footer-note {
-    text-align: center;
-    font-size: 12px;
-    color: var(--muted);
-    padding: 0 20px 40px;
-  }
+.keyword-wrap { display: none; margin-bottom: 16px; }
+.keyword-wrap.show { display: block; }
+.keyword-error { display: none; color: var(–rose); font-size: 12px; margin-top: 4px; }
+.keyword-error.show { display: block; }
 
-  @media (max-width: 380px) {
-    .payment-grid { grid-template-columns: 1fr 1fr; }
-  }
+.ride-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.chip { position: relative; }
+.chip input[type=“checkbox”] { position: absolute; opacity: 0; width:0; height:0; }
+.chip label {
+display: inline-block;
+padding: 8px 14px;
+border: 1.5px solid #e4e0d8;
+border-radius: 20px;
+cursor: pointer;
+background: #faf9f6;
+font-size: 13px;
+color: var(–muted);
+text-transform: none;
+letter-spacing: 0;
+font-weight: 400;
+transition: all 0.18s;
+}
+.chip input:checked + label {
+border-color: var(–ink);
+background: var(–ink);
+color: #fff;
+}
+
+/* ── Payment method picker ── */
+.payment-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
+margin-bottom: 8px;
+}
+.pay-option { position: relative; }
+.pay-option input[type=“radio”] { position: absolute; opacity: 0; width: 0; height: 0; }
+.pay-option label {
+display: flex;
+align-items: center;
+gap: 9px;
+padding: 11px 14px;
+border: 1.5px solid #e4e0d8;
+border-radius: 8px;
+cursor: pointer;
+background: #faf9f6;
+transition: all 0.18s;
+text-transform: none;
+letter-spacing: 0;
+font-size: 14px;
+color: var(–ink);
+font-weight: 400;
+}
+.pay-option input:checked + label {
+border-color: var(–gold);
+background: #fff8ec;
+color: #8a6a1a;
+font-weight: 500;
+box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+}
+.pay-icon { font-size: 18px; }
+
+/* Payment handles */
+.pay-handles {
+background: #faf9f6;
+border: 1px solid #e4e0d8;
+border-radius: 10px;
+padding: 16px;
+margin-top: 16px;
+}
+.pay-handles p {
+font-size: 12px;
+color: var(–muted);
+text-transform: uppercase;
+letter-spacing: 0.08em;
+font-weight: 500;
+margin-bottom: 10px;
+}
+.pay-handle-row {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 8px 0;
+border-bottom: 1px solid #eee;
+font-size: 14px;
+}
+.pay-handle-row:last-child { border-bottom: none; }
+.pay-handle-row span:last-child {
+font-weight: 500;
+color: var(–ink);
+margin-left: auto;
+font-size: 13px;
+}
+
+/* ── Tip buttons ── */
+.tip-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.tip-btn {
+flex: 1;
+min-width: 60px;
+padding: 12px 8px;
+border: 1.5px solid #e4e0d8;
+border-radius: 8px;
+background: #faf9f6;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 15px;
+font-weight: 600;
+color: var(–muted);
+cursor: pointer;
+transition: all 0.18s;
+text-align: center;
+}
+.tip-btn:hover { border-color: var(–gold); color: var(–ink); }
+.tip-btn.active {
+border-color: var(–gold);
+background: #fff8ec;
+color: #8a6a1a;
+box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+}
+.tip-custom { display: none; margin-top: 8px; }
+.tip-custom.show { display: block; }
+
+/* ── Buttons ── */
+.btn-row { display: flex; gap: 10px; margin-top: 8px; }
+
+.back-btn {
+padding: 16px 20px;
+background: transparent;
+color: var(–muted);
+border: 1.5px solid #e4e0d8;
+border-radius: 10px;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 15px;
+font-weight: 500;
+cursor: pointer;
+transition: all 0.2s;
+flex-shrink: 0;
+}
+.back-btn:hover { border-color: var(–ink); color: var(–ink); }
+
+.submit-btn {
+flex: 1;
+padding: 16px;
+background: var(–ink);
+color: #fff;
+border: none;
+border-radius: 10px;
+font-family: ‘Playfair Display’, serif;
+font-size: 17px;
+font-weight: 700;
+letter-spacing: 0.04em;
+cursor: pointer;
+transition: background 0.2s, transform 0.15s;
+position: relative;
+overflow: hidden;
+}
+.submit-btn::after {
+content: ‘’;
+position: absolute; inset: 0;
+background: linear-gradient(135deg, transparent 40%, rgba(201,168,76,0.25));
+}
+.submit-btn:hover { background: #2d2d4e; transform: translateY(-1px); }
+.submit-btn:active { transform: translateY(0); }
+
+.next-btn {
+width: 100%;
+padding: 16px;
+background: var(–ink);
+color: #fff;
+border: none;
+border-radius: 10px;
+font-family: ‘Playfair Display’, serif;
+font-size: 17px;
+font-weight: 700;
+letter-spacing: 0.04em;
+cursor: pointer;
+transition: background 0.2s, transform 0.15s;
+margin-top: 8px;
+position: relative;
+overflow: hidden;
+}
+.next-btn::after {
+content: ‘’;
+position: absolute; inset: 0;
+background: linear-gradient(135deg, transparent 40%, rgba(201,168,76,0.25));
+}
+.next-btn:hover { background: #2d2d4e; transform: translateY(-1px); }
+
+/* ── Success ── */
+.success-card { display: none; text-align: center; padding: 40px 28px; }
+.success-card.show { display: block; }
+.success-icon { font-size: 52px; margin-bottom: 16px; }
+.success-card h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.8rem;
+margin-bottom: 10px;
+}
+.success-card p { color: var(–muted); font-size: 15px; line-height: 1.6; }
+
+.download-ics {
+display: inline-block;
+margin-top: 20px;
+padding: 13px 24px;
+background: var(–gold);
+color: var(–ink);
+border-radius: 8px;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+border: none;
+transition: background 0.2s;
+}
+.download-ics:hover { background: var(–gold-light); }
+
+/* ── QR ── */
+.qr-card { text-align: center; padding: 32px 28px; }
+.qr-card h3 { font-family: ‘Playfair Display’, serif; font-size: 1.2rem; margin-bottom: 6px; }
+.qr-card p { font-size: 13px; color: var(–muted); margin-bottom: 20px; }
+#qrcode {
+display: inline-block;
+padding: 14px;
+background: white;
+border: 2px solid var(–gold-light);
+border-radius: 12px;
+margin-bottom: 14px;
+}
+.qr-url {
+font-size: 11px; color: var(–muted);
+word-break: break-all;
+background: #faf9f6;
+padding: 8px 12px;
+border-radius: 6px;
+margin-bottom: 12px;
+}
+.qr-hint { font-size: 11px; color: var(–muted); font-style: italic; }
+
+.footer-note {
+text-align: center;
+font-size: 12px;
+color: var(–muted);
+padding: 0 20px 40px;
+}
+
+/* Show/hide panels */
+.panel { display: none; }
+.panel.active { display: block; }
+
+@media (max-width: 380px) {
+.payment-grid { grid-template-columns: 1fr 1fr; }
+.datetime-row { grid-template-columns: 1fr; }
+.path-grid { grid-template-columns: 1fr; }
+}
 </style>
+
 </head>
 <body>
 
@@ -379,86 +548,248 @@
 
 <div class="container">
 
-  <!-- Main Form -->
-  <div class="card" id="form-card">
-    <div class="section-label">Your Info</div>
+  <!-- ═══ PATH CHOOSER ═══ -->
 
-    <div class="field">
-      <label>Your Name</label>
-      <input type="text" id="name" placeholder="First & Last" autocomplete="name">
+  <div class="card panel active" id="panel-choose">
+    <div class="path-title">What can Kerri help with?</div>
+    <div class="path-subtitle">Choose an option to get started</div>
+    <div class="path-grid">
+      <button class="path-btn book" onclick="startBook()">
+        <span class="path-icon">🗓️</span>
+        <span class="path-label">Book a Ride</span>
+        <span class="path-desc">Schedule a new ride with Kerri</span>
+      </button>
+      <button class="path-btn pay" onclick="startPay()">
+        <span class="path-icon">💛</span>
+        <span class="path-label">Pay or Tip</span>
+        <span class="path-desc">Already rode? Send payment or a tip</span>
+      </button>
     </div>
-    <div class="field">
-      <label>Phone Number</label>
-      <input type="tel" id="phone" placeholder="(503) 555-0100" autocomplete="tel">
-    </div>
-    <div class="field">
-      <label>Email <span style="font-weight:300;text-transform:none;letter-spacing:0">(optional)</span></label>
-      <input type="email" id="email" placeholder="you@email.com" autocomplete="email">
-    </div>
-
-    <div class="section-label" style="margin-top:24px">Preferred Payment</div>
-
-    <div class="payment-grid">
-      <div class="pay-option">
-        <input type="radio" name="payment" id="pay-venmo" value="Venmo">
-        <label for="pay-venmo"><span class="pay-icon">💙</span> Venmo</label>
-      </div>
-      <div class="pay-option">
-        <input type="radio" name="payment" id="pay-zelle" value="Zelle">
-        <label for="pay-zelle"><span class="pay-icon">💜</span> Zelle</label>
-      </div>
-      <div class="pay-option">
-        <input type="radio" name="payment" id="pay-cashapp" value="Cash App">
-        <label for="pay-cashapp"><span class="pay-icon">💚</span> Cash App ($RainGrrl08)</label>
-      </div>
-      <div class="pay-option">
-        <input type="radio" name="payment" id="pay-cash" value="Cash">
-        <label for="pay-cash"><span class="pay-icon">💵</span> Cash</label>
-      </div>
-    </div>
-
-    <div class="section-label" style="margin-top:24px">Tip Preference</div>
-    <div class="tip-row">
-      <button class="tip-btn" onclick="selectTip(this,'$2')">$2</button>
-      <button class="tip-btn" onclick="selectTip(this,'$5')">$5</button>
-      <button class="tip-btn" onclick="selectTip(this,'$10')">$10</button>
-      <button class="tip-btn" onclick="selectTip(this,'custom')">Custom</button>
-    </div>
-    <div class="tip-custom" id="tip-custom">
-      <input type="number" id="tip-amount" placeholder="Enter tip amount ($)" min="1" step="1">
-    </div>
-
-    <div class="section-label" style="margin-top:24px">Ride Types I Need <span style="font-weight:300;text-transform:none;letter-spacing:0;font-size:11px">(check all that apply)</span></div>
-    <div class="ride-chips">
-      <div class="chip"><input type="checkbox" id="r-airport" value="Airport"><label for="r-airport">✈️ Airport</label></div>
-      <div class="chip"><input type="checkbox" id="r-medical" value="Medical"><label for="r-medical">🏥 Medical Appts</label></div>
-      <div class="chip"><input type="checkbox" id="r-regular" value="Regular"><label for="r-regular">🔁 Regular Commute</label></div>
-      <div class="chip"><input type="checkbox" id="r-errands" value="Errands"><label for="r-errands">🛒 Errands</label></div>
-      <div class="chip"><input type="checkbox" id="r-nights" value="Nights/Weekends"><label for="r-nights">🌙 Nights/Weekends</label></div>
-    </div>
-
-    <div class="section-label" style="margin-top:24px">Anything Else?</div>
-    <div class="field">
-      <textarea id="notes" placeholder="Neighborhood, schedule preferences, accessibility needs, etc."></textarea>
-    </div>
-
-    <button class="submit-btn" onclick="submitForm()">Send My Info to Kerri →</button>
   </div>
 
-  <!-- Success -->
-  <div class="card success-card" id="success-card">
+  <!-- ═══ BOOK: STEP 1 — Contact & Schedule ═══ -->
+
+  <div class="card panel" id="panel-book-1">
+
+```
+<div class="step-indicator">
+  <div class="step-dot active" id="dot-1">1</div>
+  <div class="step-line" id="line-1"></div>
+  <div class="step-dot" id="dot-2">2</div>
+</div>
+<div class="step-labels">
+  <div class="step-label active" id="label-1">Your Info & Schedule</div>
+  <div class="step-label" id="label-2">Payment Preference</div>
+</div>
+
+<div class="section-label">Your Info</div>
+
+<div class="field">
+  <label>Your Name</label>
+  <input type="text" id="name" placeholder="First & Last" autocomplete="name">
+</div>
+<div class="field">
+  <label>Phone Number</label>
+  <input type="tel" id="phone" placeholder="(503) 555-0100" autocomplete="tel">
+</div>
+<div class="field">
+  <label>Email <span style="font-weight:300;text-transform:none;letter-spacing:0">(optional — for calendar invite)</span></label>
+  <input type="email" id="email" placeholder="you@email.com" autocomplete="email">
+</div>
+
+<div class="section-label" style="margin-top:24px">Ride Details</div>
+
+<div class="datetime-row">
+  <div class="field" style="margin-bottom:0">
+    <label>Date</label>
+    <input type="date" id="ride-date" onchange="checkAdvanceNotice()">
+  </div>
+  <div class="field" style="margin-bottom:0">
+    <label>Pickup Time</label>
+    <input type="time" id="ride-time" onchange="checkAdvanceNotice()">
+  </div>
+</div>
+
+<div style="margin-top:12px"></div>
+<div class="warning-box" id="advance-warning">
+  ⏰ Rides require at least <strong>24 hours advance notice</strong>. If Kerri gave you a same-day booking code, enter it below.
+</div>
+<div class="keyword-wrap" id="keyword-wrap">
+  <label>Same-Day Booking Code</label>
+  <input type="text" id="keyword" placeholder="Enter code from Kerri" oninput="clearKeywordError()">
+  <div class="keyword-error" id="keyword-error">❌ Incorrect code. Please contact Kerri directly at (503) 577-3411.</div>
+</div>
+
+<div class="field" style="margin-top:8px">
+  <label>Ride Type <span style="font-weight:300;text-transform:none;letter-spacing:0">(check all that apply)</span></label>
+  <div class="ride-chips">
+    <div class="chip"><input type="checkbox" id="r-airport" value="Airport"><label for="r-airport">✈️ Airport</label></div>
+    <div class="chip"><input type="checkbox" id="r-medical" value="Medical"><label for="r-medical">🏥 Medical</label></div>
+    <div class="chip"><input type="checkbox" id="r-regular" value="Regular Commute"><label for="r-regular">🔁 Commute</label></div>
+    <div class="chip"><input type="checkbox" id="r-errands" value="Errands"><label for="r-errands">🛒 Errands</label></div>
+    <div class="chip"><input type="checkbox" id="r-nights" value="Nights/Weekends"><label for="r-nights">🌙 Nights/Wknds</label></div>
+  </div>
+</div>
+
+<div class="field">
+  <label>Notes</label>
+  <textarea id="notes" placeholder="Pickup address, destination, accessibility needs, etc."></textarea>
+</div>
+
+<div class="btn-row">
+  <button class="back-btn" onclick="showPanel('panel-choose')">← Back</button>
+  <button class="next-btn" style="margin-top:0" onclick="goToBookStep2()">Next: Payment →</button>
+</div>
+```
+
+  </div>
+
+  <!-- ═══ BOOK: STEP 2 — Payment Preference ═══ -->
+
+  <div class="card panel" id="panel-book-2">
+
+```
+<div class="step-indicator">
+  <div class="step-dot done" id="dot-1b">✓</div>
+  <div class="step-line done"></div>
+  <div class="step-dot active" id="dot-2b">2</div>
+</div>
+<div class="step-labels">
+  <div class="step-label" style="color:var(--gold)">Info & Schedule ✓</div>
+  <div class="step-label active">Payment Preference</div>
+</div>
+
+<div class="section-label">How You'll Pay After Your Ride</div>
+<p style="font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.6;">Payment is settled directly with Kerri after your ride. Select your preferred method so she knows what to expect.</p>
+
+<div class="payment-grid">
+  <div class="pay-option">
+    <input type="radio" name="payment" id="pay-venmo" value="Venmo">
+    <label for="pay-venmo"><span class="pay-icon">💙</span> Venmo</label>
+  </div>
+  <div class="pay-option">
+    <input type="radio" name="payment" id="pay-zelle" value="Zelle">
+    <label for="pay-zelle"><span class="pay-icon">💜</span> Zelle</label>
+  </div>
+  <div class="pay-option">
+    <input type="radio" name="payment" id="pay-cashapp" value="Cash App">
+    <label for="pay-cashapp"><span class="pay-icon">💚</span> Cash App</label>
+  </div>
+  <div class="pay-option">
+    <input type="radio" name="payment" id="pay-cash" value="Cash">
+    <label for="pay-cash"><span class="pay-icon">💵</span> Cash</label>
+  </div>
+</div>
+
+<div class="pay-handles">
+  <p>Kerri's payment handles</p>
+  <div class="pay-handle-row"><span>💙</span> Venmo<span>@kerrisue</span></div>
+  <div class="pay-handle-row"><span>💜</span> Zelle<span>(503) 577-3411</span></div>
+  <div class="pay-handle-row"><span>💚</span> Cash App<span>$RainGrrl08</span></div>
+  <div class="pay-handle-row"><span>💵</span> Cash<span>Exact change appreciated</span></div>
+</div>
+
+<div class="btn-row">
+  <button class="back-btn" onclick="showPanel('panel-book-1')">← Back</button>
+  <button class="submit-btn" onclick="submitBooking()">Send Booking →</button>
+</div>
+```
+
+  </div>
+
+  <!-- ═══ PAY / TIP FORM ═══ -->
+
+  <div class="card panel" id="panel-pay">
+
+```
+<div class="section-label">Send a Tip or Payment</div>
+<p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">Thank you for tipping outside the app — it means a lot! Fill this out so Kerri knows it's from you, then send via your preferred method.</p>
+
+<div class="field">
+  <label>Your Name</label>
+  <input type="text" id="tip-name" placeholder="First & Last">
+</div>
+
+<div class="section-label" style="margin-top:4px">Tip Amount</div>
+<div class="tip-row">
+  <button class="tip-btn" onclick="selectTip(this,'$5')">$5</button>
+  <button class="tip-btn" onclick="selectTip(this,'$10')">$10</button>
+  <button class="tip-btn" onclick="selectTip(this,'$20')">$20</button>
+  <button class="tip-btn" onclick="selectTip(this,'custom')">Custom</button>
+</div>
+<div class="tip-custom" id="tip-custom-wrap">
+  <input type="number" id="tip-custom-amt" placeholder="Enter amount ($)" min="1" step="1">
+</div>
+
+<div class="section-label" style="margin-top:24px">Send Via</div>
+<div class="payment-grid">
+  <div class="pay-option">
+    <input type="radio" name="tip-payment" id="tip-venmo" value="Venmo">
+    <label for="tip-venmo"><span class="pay-icon">💙</span> Venmo</label>
+  </div>
+  <div class="pay-option">
+    <input type="radio" name="tip-payment" id="tip-zelle" value="Zelle">
+    <label for="tip-zelle"><span class="pay-icon">💜</span> Zelle</label>
+  </div>
+  <div class="pay-option">
+    <input type="radio" name="tip-payment" id="tip-cashapp" value="Cash App">
+    <label for="tip-cashapp"><span class="pay-icon">💚</span> Cash App</label>
+  </div>
+  <div class="pay-option">
+    <input type="radio" name="tip-payment" id="tip-cash" value="Cash">
+    <label for="tip-cash"><span class="pay-icon">💵</span> Cash</label>
+  </div>
+</div>
+
+<div class="pay-handles">
+  <p>Kerri's handles — send directly here</p>
+  <div class="pay-handle-row"><span>💙</span> Venmo<span>@kerrisue</span></div>
+  <div class="pay-handle-row"><span>💜</span> Zelle<span>(503) 577-3411</span></div>
+  <div class="pay-handle-row"><span>💚</span> Cash App<span>$RainGrrl08</span></div>
+</div>
+
+<div class="field" style="margin-top:16px">
+  <label>Note <span style="font-weight:300;text-transform:none;letter-spacing:0">(optional)</span></label>
+  <input type="text" id="tip-note" placeholder="e.g. Great ride on Tuesday!">
+</div>
+
+<div class="btn-row">
+  <button class="back-btn" onclick="showPanel('panel-choose')">← Back</button>
+  <button class="submit-btn" onclick="submitTip()">Send Tip Notice →</button>
+</div>
+```
+
+  </div>
+
+  <!-- ═══ SUCCESS — BOOKING ═══ -->
+
+  <div class="card success-card" id="success-booking">
     <div class="success-icon">🌟</div>
-    <h2>You're on the list!</h2>
-    <p id="success-msg">Thanks — Kerri will reach out to you directly at your number to confirm details and set up your first ride.</p>
-    <div style="margin-top:20px;padding:16px;background:#faf9f6;border-radius:10px;font-size:13px;color:var(--muted)">
+    <h2>You're booked!</h2>
+    <p id="success-book-msg">Kerri will confirm your ride shortly.</p>
+    <div style="margin-top:16px;padding:16px;background:#faf9f6;border-radius:10px;font-size:13px;color:var(--muted)">
       📱 Save Kerri's number: <strong style="color:var(--ink)">(503) 577-3411</strong> so you recognize her texts!
     </div>
+    <button class="download-ics" onclick="downloadICS()">📅 Add to My Calendar</button>
   </div>
 
-  <!-- QR Code Card (shown only when viewing as driver) -->
+  <!-- ═══ SUCCESS — TIP ═══ -->
+
+  <div class="card success-card" id="success-tip">
+    <div class="success-icon">💛</div>
+    <h2>Thanks so much!</h2>
+    <p id="success-tip-msg">Kerri has been notified. You're a gem!</p>
+    <div style="margin-top:16px;padding:16px;background:#faf9f6;border-radius:10px;font-size:13px;color:var(--muted)">
+      Remember to send the tip directly via your chosen app!<br>
+      <strong style="color:var(--ink)">Venmo @kerrisue · Zelle (503) 577-3411 · Cash App $RainGrrl08</strong>
+    </div>
+  </div>
+
+  <!-- ═══ QR Code ═══ -->
+
   <div class="card qr-card" id="qr-section">
     <h3>Your Passenger QR Code</h3>
-    <p>Display this in your car — passengers scan to register</p>
+    <p>Display this in your car — passengers scan to get started</p>
     <div id="qrcode"></div>
     <div class="qr-url" id="qr-url-display"></div>
     <p class="qr-hint">💡 Tip: Right-click the QR code to save & print it, or screenshot for your phone</p>
@@ -467,87 +798,203 @@
 </div>
 
 <div class="footer-note">
-  🔒 Your info goes directly to Kerri — not stored by any app or third party.<br>
-  She'll reach out within 24 hours.
+  🔒 Your info goes directly to Kerri — not stored by any app or third party.
 </div>
 
 <script>
-  let selectedTip = null;
+  const DRIVER_EMAIL  = 'kerrisue@mac.com';
+  const SECRET_KEYWORD = 'g2ksue';
+  const ADVANCE_HOURS  = 24;
 
+  let selectedTip = null;
+  let pendingICS  = null;
+
+  // ── Panel navigation ──
+  function showPanel(id) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function startBook() { showPanel('panel-book-1'); }
+  function startPay()  { showPanel('panel-pay'); }
+
+  // ── Booking step 1 → 2 ──
+  function goToBookStep2() {
+    const name    = document.getElementById('name').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const dateVal = document.getElementById('ride-date').value;
+    const timeVal = document.getElementById('ride-time').value;
+
+    if (!name)  { alert('Please enter your name.'); return; }
+    if (!phone) { alert('Please enter your phone number.'); return; }
+    if (!dateVal || !timeVal) { alert('Please select a date and pickup time.'); return; }
+
+    const selected   = new Date(`${dateVal}T${timeVal}`);
+    const hoursAhead = (selected - new Date()) / 36e5;
+    if (hoursAhead <= 0) { alert('Please select a future date and time.'); return; }
+
+    if (hoursAhead < ADVANCE_HOURS) {
+      const keyword = document.getElementById('keyword').value.trim();
+      if (keyword !== SECRET_KEYWORD) {
+        document.getElementById('advance-warning').classList.add('show');
+        document.getElementById('keyword-wrap').classList.add('show');
+        document.getElementById('keyword-error').classList.add('show');
+        return;
+      }
+    }
+    showPanel('panel-book-2');
+  }
+
+  function checkAdvanceNotice() {
+    const dateVal = document.getElementById('ride-date').value;
+    const timeVal = document.getElementById('ride-time').value;
+    if (!dateVal || !timeVal) return;
+    const selected   = new Date(`${dateVal}T${timeVal}`);
+    const hoursAhead = (selected - new Date()) / 36e5;
+    const show = hoursAhead < ADVANCE_HOURS && hoursAhead > 0;
+    document.getElementById('advance-warning').classList.toggle('show', show);
+    document.getElementById('keyword-wrap').classList.toggle('show', show);
+    if (!show) document.getElementById('keyword-error').classList.remove('show');
+  }
+
+  function clearKeywordError() {
+    document.getElementById('keyword-error').classList.remove('show');
+  }
+
+  // ── Tip selection ──
   function selectTip(btn, value) {
     document.querySelectorAll('.tip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     selectedTip = value;
-    const customBox = document.getElementById('tip-custom');
-    if (value === 'custom') {
-      customBox.classList.add('show');
-    } else {
-      customBox.classList.remove('show');
-    }
+    document.getElementById('tip-custom-wrap').classList.toggle('show', value === 'custom');
   }
 
-  function submitForm() {
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
+  // ── ICS builder ──
+  function formatICSDate(date) {
+    return date.toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
+  }
+  function buildICS(name, passengerEmail, rideDate, notes, payment) {
+    const start = new Date(rideDate);
+    const end   = new Date(start.getTime() + 30 * 60000);
+    const uid   = `kerri-ride-${Date.now()}@go2kerrisue`;
+    const attendees = passengerEmail
+      ? `ATTENDEE;CN="${name}";RSVP=TRUE:mailto:${passengerEmail}\r\nATTENDEE;CN="Kerri (Your Driver)";RSVP=TRUE:mailto:${DRIVER_EMAIL}`
+      : `ATTENDEE;CN="Kerri (Your Driver)";RSVP=TRUE:mailto:${DRIVER_EMAIL}`;
+    return [
+      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Kerri Direct Rides//EN',
+      'CALSCALE:GREGORIAN','METHOD:REQUEST','BEGIN:VEVENT',
+      `UID:${uid}`,`DTSTAMP:${formatICSDate(new Date())}`,
+      `DTSTART:${formatICSDate(start)}`,`DTEND:${formatICSDate(end)}`,
+      `SUMMARY:🚗 Ride with Kerri`,
+      `DESCRIPTION:Your private ride with Kerri!\\nPayment: ${payment}\\nNotes: ${notes||'None'}\\nKerri: (503) 577-3411`,
+      `ORGANIZER;CN="Kerri (Your Driver)":mailto:${DRIVER_EMAIL}`,
+      attendees,'STATUS:CONFIRMED','SEQUENCE:0','END:VEVENT','END:VCALENDAR'
+    ].join('\r\n');
+  }
+  function downloadICS() {
+    if (!pendingICS) return;
+    const blob = new Blob([pendingICS], { type: 'text/calendar;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = 'kerri-ride.ics'; a.click();
+    URL.revokeObjectURL(url);
+  }
 
-    if (!name) { alert('Please enter your name.'); return; }
-    if (!phone) { alert('Please enter your phone number.'); return; }
-
+  // ── Submit booking ──
+  function submitBooking() {
     const payment = document.querySelector('input[name="payment"]:checked');
+    if (!payment) { alert('Please select a payment method.'); return; }
+
+    const name     = document.getElementById('name').value.trim();
+    const phone    = document.getElementById('phone').value.trim();
+    const email    = document.getElementById('email').value.trim();
+    const dateVal  = document.getElementById('ride-date').value;
+    const timeVal  = document.getElementById('ride-time').value;
+    const notes    = document.getElementById('notes').value.trim();
     const rideTypes = [...document.querySelectorAll('.chip input:checked')].map(i => i.value);
-    const notes = document.getElementById('notes').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const selected  = new Date(`${dateVal}T${timeVal}`);
+    const rideLabel = selected.toLocaleString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric', hour:'numeric', minute:'2-digit' });
+    const payVal    = payment.value;
 
-    let tipText = selectedTip;
-    if (selectedTip === 'custom') {
-      const amt = document.getElementById('tip-amount').value;
-      tipText = amt ? `$${amt} custom tip` : 'Custom (unspecified)';
-    }
+    pendingICS = buildICS(name, email, selected, notes, payVal);
 
-    // Build mailto so submissions go to the driver's email
-    const subject = encodeURIComponent(`New Private Ride Request — ${name}`);
+    const subject = encodeURIComponent(`New Ride Request — ${name} on ${rideLabel}`);
     const body = encodeURIComponent(
-`New passenger inquiry from your QR code!
+`New passenger booking from your QR code!
 
 Name: ${name}
 Phone: ${phone}
 Email: ${email || 'Not provided'}
-Preferred Payment: ${payment ? payment.value : 'Not selected'}
-Tip Preference: ${tipText || 'Not specified'}
-Ride Types Needed: ${rideTypes.length ? rideTypes.join(', ') : 'None selected'}
+Ride Date/Time: ${rideLabel}
+Ride Types: ${rideTypes.length ? rideTypes.join(', ') : 'Not specified'}
+Preferred Payment: ${payVal}
 Notes: ${notes || 'None'}
-`
-    );
+`);
+    let mailto = `mailto:${DRIVER_EMAIL}?subject=${subject}&body=${body}`;
+    if (email) mailto += `&cc=${encodeURIComponent(email)}`;
+    window.location.href = mailto;
 
-    // ---- CUSTOMIZE THIS EMAIL ADDRESS ----
-    const driverEmail = 'kerrisue@mac.com';
-    // -------------------------------------
-
-    // Open mailto (works on most phones)
-    window.location.href = `mailto:${driverEmail}?subject=${subject}&body=${body}`;
-
-    // Show success
-    document.getElementById('form-card').style.display = 'none';
+    showPanel(null); // hide all
     document.getElementById('qr-section').style.display = 'none';
-    const sc = document.getElementById('success-card');
-    sc.classList.add('show');
-    document.getElementById('success-msg').textContent =
-      `Thanks, ${name}! Kerri will reach out to you at ${phone} to set things up. Looking forward to riding with you!`;
+    document.getElementById('success-booking').classList.add('show');
+    document.getElementById('success-book-msg').textContent =
+      `Thanks, ${name}! Your ride on ${rideLabel} has been requested. Kerri will reach out to ${phone} to confirm.`;
   }
 
-  // Generate QR code for this page
+  // ── Submit tip ──
+  function submitTip() {
+    const name    = document.getElementById('tip-name').value.trim();
+    const payment = document.querySelector('input[name="tip-payment"]:checked');
+    const note    = document.getElementById('tip-note').value.trim();
+
+    if (!name)    { alert('Please enter your name.'); return; }
+    if (!selectedTip) { alert('Please select a tip amount.'); return; }
+    if (!payment) { alert('Please select how you\'ll send it.'); return; }
+
+    let tipAmt = selectedTip;
+    if (selectedTip === 'custom') {
+      const amt = document.getElementById('tip-custom-amt').value;
+      if (!amt) { alert('Please enter a custom tip amount.'); return; }
+      tipAmt = `$${amt}`;
+    }
+
+    const subject = encodeURIComponent(`Tip from ${name} via ${payment.value}`);
+    const body = encodeURIComponent(
+`Tip notification from your booking page!
+
+From: ${name}
+Amount: ${tipAmt}
+Via: ${payment.value}
+Note: ${note || 'None'}
+`);
+    window.location.href = `mailto:${DRIVER_EMAIL}?subject=${subject}&body=${body}`;
+
+    showPanel(null);
+    document.getElementById('qr-section').style.display = 'none';
+    document.getElementById('success-tip').classList.add('show');
+    document.getElementById('success-tip-msg').textContent =
+      `Kerri has been notified about your ${tipAmt} tip via ${payment.value}. You're a gem, ${name}!`;
+  }
+
+  function showPanel(id) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    if (id) document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── Init ──
   window.addEventListener('load', function() {
+    document.getElementById('ride-date').min = new Date().toISOString().split('T')[0];
     const pageUrl = window.location.href.split('?')[0];
     document.getElementById('qr-url-display').textContent = pageUrl;
     new QRCode(document.getElementById('qrcode'), {
-      text: pageUrl,
-      width: 200,
-      height: 200,
-      colorDark: '#1a1a2e',
-      colorLight: '#ffffff',
+      text: pageUrl, width: 200, height: 200,
+      colorDark: '#1a1a2e', colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.H
     });
   });
 </script>
+
 </body>
 </html>
